@@ -14,8 +14,8 @@ const time = document.getElementById('timee');
 
     document.getElementById('showTime').style.display = "none";
 
-
-function setCountdown(e){
+    function setCountdown(e){
+    
     e.preventDefault();
    
      countdown = new Date(date.value + " " + time.value);
@@ -51,6 +51,22 @@ function setCountdown(e){
         document.getElementById('showMinutes').innerHTML = showMinutes;
         document.getElementById('showSeconds').innerHTML = showSeconds;
         document.getElementById('showTime').style.display = "block";
+        if (showSeconds<0) {
+            let hours12 = countdown.getHours();
+            let am_pm = "";
+            if(hours12>=12){
+                hours12 -= 12;
+                am_pm = "PM";
+            }
+            else{
+                if (hours12 == 0) {
+                    hours12 = 12;
+                }
+                am_pm = "AM";
+            }
+            document.getElementById('showTime').innerHTML =  `Countdown ended. Countdown was set for : ${hours12}:${countdown.getMinutes()}:${countdown.getSeconds()}0 ${am_pm} for date ${countdown.getDate()}/${countdown.getMonth()}/${1900 +countdown.getYear()}`;
+            
+        }
     }, 1000);
     if (timetocountdown >=0) {
         setTimeout(() => {
