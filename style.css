@@ -1,0 +1,28 @@
+html , body{
+    background: linear-gradient(45deg ,red , blue ,yellow);
+    height: 99%;
+}
+#set{
+    display: flex;
+    margin-top: 3rem;
+}
+#setDate{
+    display: inline-block;
+    font-size: larger;
+    margin: 2rem;
+}
+#datee , #timee{
+    width: 30%;
+}
+#countdownHelp, #countdownSubmit{
+    display: block;
+}
+#countdownSubmit{
+    width: 50%;
+    margin: auto;
+    font-weight: bold;
+}
+#countdownSubmit:hover{
+    background-color: yellowgreen;
+    color: black;
+}
